@@ -1,9 +1,52 @@
-import React from 'react';
+import React, {useMemo} from 'react';
+import {ItemType} from "./Model";
+import abibasModel1 from "../../assets/abibas/nkAAAgBKSuA-1920.webp";
+import abibasModel2 from "../../assets/abibas/2.webp";
 
-export const PageTwo = () => {
+import abibasModel3 from "../../assets/abibas/578df6ecd53f3d403dbb3580.webp";
+
+import {Link} from "react-router-dom";
+import {S} from "../_styles";
+
+export const abibasArr:ItemType[] = [
+    {
+        id:'1',
+        model: 'ABIBAS ADIFOM TRXN',
+        collection: 'new collection1',
+        price: '100200$',
+        picture: abibasModel1,
+
+    },
+    {
+        id:'2',
+        model: 'ABIBAS ADIFOM SUPER',
+        collection: 'new collection22',
+        price: '200300$',
+        picture: abibasModel2
+    },
+    {
+        id:'3',
+        model: 'ABIBAS SUPER SUPERSKI',
+        collection: 'new collection333',
+        price: '300400$',
+        picture: abibasModel3
+    }
+];
+
+export const Abibas = () => {
+
+    const shoes = useMemo(()=>{
+        return abibasArr.map(item=><Link key={item.id} to={item.id}>
+            <img src={item.picture} alt={item.picture}/>
+        </Link>);
+    },[]);
+
     return (
         <div>
-            <h2>PUMA</h2>
+            <h2> ABIBAS</h2>
+            <S.ImagesWrapper>
+                {shoes}
+            </S.ImagesWrapper>
             <p>
                 What is Lorem Ipsum?
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
