@@ -15,6 +15,15 @@ export type ItemType= {
     price: string;
     picture: string;
 }
+ type BrandType= keyof typeof crossBrands;
+
+
+const crossBrands = {
+    [PATH.ADIDAS]:adidasArr,
+    [PATH.PUMA]:pumaArr,
+    [PATH.ABIBAS]:abibasArr,
+} as const;
+
 const getArrShoes = (brand:string):ItemType[]=>{
     switch(`/${brand}`){
         case PATH.ADIDAS: {
@@ -34,16 +43,19 @@ const getArrShoes = (brand:string):ItemType[]=>{
 
 export const Model:FC<PropsType> = () => {
 
-    const params = useParams();
+    const {Brand, idShoe,} = useParams<{Brand:BrandType,idShoe:string}>();
 
+
+//todo нужно заварганить логику
     const shoe:ItemType = useMemo(()=>{
 
         const defaultValue = {id:'null',picture:'',model:'',collection:'',price:''};
-        const shoes:ItemType[] = params.Brand ? getArrShoes(params.Brand) : [];
 
-        return shoes.length>0 ? (shoes.find(item => item.id === params.idShoe)||defaultValue):defaultValue;
+        const shoes:ItemType[]|null = Brand ? crossBrands[Brand] : null;
 
-    },[params.Brand,params.idShoe]);
+        return shoes?.find(item => item.id === idShoe)||defaultValue;
+
+    },[Brand,idShoe]);
 
 
     return (

@@ -43,7 +43,7 @@ export const Adidas = () => {
         <div>
            <h2>ADIDAS</h2>
             <S.ImagesWrapper>
-                {adidasArr.map((item) => <Link key={item.id} to={`${PATH.ADIDAS}/${item.id}`} >
+                {adidasArr.map((item) => <Link key={item.id} to={item.id} >
                     <img src={item.picture} alt=""/>
                 </Link>
                 )}

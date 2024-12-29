@@ -5,12 +5,12 @@ import {ReactElement} from "react";
 
 
 export const PATH = {
-    ADIDAS: '/ADIDAS',
-    PUMA: '/PUMA',
-    ABIBAS: '/ABIBAS',
-    ERROR: '/404',
+    ADIDAS: 'ADIDAS',
+    PUMA: 'PUMA',
+    ABIBAS: 'ABIBAS',
+    ERROR: '404',
     DEFAULT: '/',
-    MODEL: '/MODEL',
+    MODEL: 'MODEL',
     ALL:'*',
 } as const;
 

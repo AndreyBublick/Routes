@@ -35,11 +35,12 @@ const Nav = styled.nav`
 
 const NavLinkStyle = styled(NavLink)`
     text-decoration: none;
+    
     color: #282c34;
-    /*&.active{
+    &.active{///don't touch
         color: #7fb8f1;
         text-decoration: underline; 
-    }*/
+    }
 `;
 
 
