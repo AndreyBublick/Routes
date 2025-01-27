@@ -9,8 +9,11 @@ import {Model} from "./components/pages/Model";
 
 function App() {
 
-    const navLinks = routes.map((route) => <S.NavWrapper key={route.path}> <S.NavLinkStyle
-        to={route.path}>{route.path}</S.NavLinkStyle></S.NavWrapper>);
+    const navLinks = routes.map((route) => <S.NavWrapper key={route.path}>
+        <S.NavLinkStyle
+        to={route.path}>{route.path==='PRICES' ? 'Цены для оптовиков' : route.path}
+    </S.NavLinkStyle>
+    </S.NavWrapper>);
 
     return (
        <div>
