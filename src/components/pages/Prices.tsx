@@ -51,6 +51,7 @@ export const Prices:FC<Props> = (props: Props) => {
     const [searchParams,setSearchParams] = useSearchParams();
 
 
+
     const [isSale,setIsSale] = useState<boolean|null>(null);
     const [filteredSneakers, setFilteredSneakers] = useState<Array<Sneaker>>([]);
 
@@ -60,7 +61,7 @@ export const Prices:FC<Props> = (props: Props) => {
         const  isSaleValue = searchParams.get('isSale');
         isSaleValue && setIsSale(JSON.parse(isSaleValue)) /*: setIsSale(null)*/;
 
-    }, []);
+    }, [searchParams]);
 
 
 

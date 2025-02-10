@@ -4,7 +4,6 @@ import adidasModel2 from '../../assets/adidas/Superstar_XLG_Shoes_Black_IG9777_0
 import adidasModel3 from '../../assets/adidas/PostMove_Mid_Cloudfoam_Super_Lifestyle_Basketball_Mid_Classic_Shoes_Black_GY7163_01_standard.webp';
 import {S} from '../_styles';
 import {Link} from "react-router-dom";
-import {PATH} from "../../routes/routes";
 import {ItemType} from "./Model";
 
 
